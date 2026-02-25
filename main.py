@@ -3,10 +3,9 @@ def main():
     from src.parser import extract_data, store_data_in_db
     from src.analyzer import analyze_news_data
 
-    scrape_ua_news()
-
-    data = extract_data()
-    store_data_in_db(data)
+    results = analyze_news_data()
+    for key, value in results.items():
+        print(f"{key}: {value}")
 
 
 if __name__ == "__main__":

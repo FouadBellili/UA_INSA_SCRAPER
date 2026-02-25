@@ -42,7 +42,7 @@ def extract_data():
 
 def store_data_in_db(data):
 
-    conn = sqlite3.connect(BASE_DIR / "data" / "silver" / "ua_news.db")
+    conn = sqlite3.connect(BASE_DIR / "data" / "silver" / "ua_news" / "ua_news.db")
 
     with conn:
         conn.execute("""
