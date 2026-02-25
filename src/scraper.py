@@ -4,6 +4,8 @@ import time
 
 from playwright.sync_api import sync_playwright
 
+logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
+
 i=0
 BASE_DIR = pathlib.Path(__file__).parent.parent
 BRONZE_DIR = BASE_DIR / "data" / "bronze" / "ua_news"
@@ -29,7 +31,7 @@ with sync_playwright() as p:
         try:
             page.get_by_role("button", name="Carregar mais").click(timeout=5000)
             page.wait_for_load_state("networkidle")
-            time.sleep(1)
+            time.sleep(2)
         except Exception as e:
             print(f"Error clicking 'Carregar mais' button: {e}")
             break
